@@ -1,7 +1,7 @@
 let mapleader = " "
 
 " ------------------------------------------------------------------------------
-" opciones generales
+" general options
 " ------------------------------------------------------------------------------
 set history=500
 set nobackup
@@ -20,9 +20,6 @@ set pastetoggle=<F2>
 set nomodeline
 set wildmenu
 
-" ------------------------------------------------------------------------------
-" 
-" ------------------------------------------------------------------------------
 filetype plugin on
 filetype indent on
 
@@ -47,6 +44,7 @@ call plug#end()
 autocmd VimEnter * NERDTree | wincmd p
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
+autocmd BufWinEnter * silent NERDTreeMirror
 
 " ------------------------------------------------------------------------------
 " auto indentacion
