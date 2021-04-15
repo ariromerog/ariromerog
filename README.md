@@ -1,4 +1,6 @@
-### Hi there 👋
+### Hello, world 👋
+
+This is my github profile. I'm loving it so far.
 
 <!--
 **ariromerog/ariromerog** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
