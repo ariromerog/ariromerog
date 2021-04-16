@@ -19,6 +19,7 @@ set splitright
 set pastetoggle=<F2>
 set nomodeline
 set wildmenu
+set mouse=a
 
 filetype plugin on
 filetype indent on
