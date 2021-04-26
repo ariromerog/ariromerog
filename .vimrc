@@ -39,6 +39,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'Valloric/YouCompleteMe', { 'commit':'d98f896' }
   Plug 'jiangmiao/auto-pairs'
   Plug 'alvan/vim-closetag'
+  Plug 'maxmellon/vim-jsx-pretty'
 call plug#end()
 
 " NerdTree
@@ -103,5 +104,7 @@ nmap <Leader>wq :wq<CR>
 nmap <Leader>qa :qa<CR>
 " teclas f
 map <F7> gg=G<C-o><C-o> " ordenar todo el archivo
-
+nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:retab<CR>
+" visual mode
+vmap D y'>p
 
