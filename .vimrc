@@ -108,3 +108,5 @@ nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:
 " visual mode
 vmap D y'>p
 
+" ctrl c copies to clipboard
+vnoremap <C-C> :w !xclip -i -sel c<CR><CR>
