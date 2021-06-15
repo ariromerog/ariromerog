@@ -36,13 +36,29 @@ au FocusGained,BufEnter * checktime
 
 call plug#begin('~/.vim/plugged')
   Plug 'preservim/nerdtree'
-  Plug 'Valloric/YouCompleteMe', { 'commit':'d98f896' }
   Plug 'jiangmiao/auto-pairs'
   Plug 'alvan/vim-closetag'
   Plug 'maxmellon/vim-jsx-pretty'
+  Plug 'Valloric/YouCompleteMe'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
+" ------------------------------------------------------------------------------
+" Airline
+" ------------------------------------------------------------------------------
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+
+" ------------------------------------------------------------------------------
+" YCM
+" ------------------------------------------------------------------------------
+
+set completeopt-=preview
+
+" ------------------------------------------------------------------------------
 " NerdTree
+" ------------------------------------------------------------------------------
 autocmd VimEnter * NERDTree | wincmd p
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
@@ -86,6 +102,8 @@ autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
+let g:coc_disable_startup_warning = 1
+
 " ------------------------------------------------------------------------------
 " atajos
 " ------------------------------------------------------------------------------
@@ -107,6 +125,8 @@ map <F7> gg=G<C-o><C-o> " ordenar todo el archivo
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:retab<CR>
 " visual mode
 vmap D y'>p
+" terminal
+tnoremap <Esc><Esc> <C-\><C-n>
 
 " ctrl c copies to clipboard
 vnoremap <C-C> :w !xclip -i -sel c<CR><CR>
